@@ -96,16 +96,16 @@ namespace hospital
                                 MessageBox.Show("Добро пожаловать " +
                                 Userinfo.getusername(), "Вход выполнен");
                                 this.Hide();
-                               // client cl = new client();
-                               // cl.Show();
+                                Client cl = new Client();
+                                cl.Show();
                                 break;
                             case "Админ":
                                 vhod();
                                 MessageBox.Show("Добро пожаловать " +
                                 Userinfo.getusername(), "Вход выполнен");
-                              //  client cl2 = new client();
+                                Client cl2 = new Client();
                                 this.Hide();
-                               // cl2.Show();
+                                cl2.Show();
                                 //cl2.time.Visible = true;
                                 break;
                             default:

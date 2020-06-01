@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="pacDataSet" targetNamespace="http://tempuri.org/pacDataSet.xsd" xmlns:mstns="http://tempuri.org/pacDataSet.xsd" xmlns="http://tempuri.org/pacDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="pacConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="pacConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.diplom.Properties.Settings.GlobalReference.Default.pacConnectionString" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="sotTableAdapter" GeneratorDataComponentClassName="sotTableAdapter" Name="sot" UserDataComponentName="sotTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="pacConnectionString (Settings)" DbObjectName="pac.sot" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `idpers`, `Логин`, `Пароль`, `Фамилия`, `Имя`, `Отчество`, `Пол`, `Дата рождения`, `КСГ`, `Серия`, `Номер`, `СНИЛС`, `Адрес`, `Место рождения`, `Дата добавления`, `Допуск` FROM `sot`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="timeTableAdapter" GeneratorDataComponentClassName="timeTableAdapter" Name="time" UserDataComponentName="timeTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="pacConnectionString (Settings)" DbObjectName="pac.`time`" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `ФИО`, `Время`, `Действие` FROM `time`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="pacDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="pacDataSet" msprop:Generator_UserDSName="pacDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="sot" msprop:Generator_TableClassName="sotDataTable" msprop:Generator_TableVarName="tablesot" msprop:Generator_TablePropName="sot" msprop:Generator_RowDeletingName="sotRowDeleting" msprop:Generator_RowChangingName="sotRowChanging" msprop:Generator_RowEvHandlerName="sotRowChangeEventHandler" msprop:Generator_RowDeletedName="sotRowDeleted" msprop:Generator_UserTableName="sot" msprop:Generator_RowChangedName="sotRowChanged" msprop:Generator_RowEvArgName="sotRowChangeEvent" msprop:Generator_RowClassName="sotRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="time" msprop:Generator_TableClassName="timeDataTable" msprop:Generator_TableVarName="tabletime" msprop:Generator_TablePropName="time" msprop:Generator_RowDeletingName="timeRowDeleting" msprop:Generator_RowChangingName="timeRowChanging" msprop:Generator_RowEvHandlerName="timeRowChangeEventHandler" msprop:Generator_RowDeletedName="timeRowDeleted" msprop:Generator_UserTableName="time" msprop:Generator_RowChangedName="timeRowChanged" msprop:Generator_RowEvArgName="timeRowChangeEvent" msprop:Generator_RowClassName="timeRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
