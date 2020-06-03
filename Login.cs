@@ -106,7 +106,7 @@ namespace hospital
                                 Client cl2 = new Client();
                                 this.Hide();
                                 cl2.Show();
-                                //cl2.time.Visible = true;
+                                cl2.time.Visible = true;
                                 break;
                             default:
                                 MessageBox.Show("Допуск не установлен");

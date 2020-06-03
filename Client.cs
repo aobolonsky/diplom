@@ -29,6 +29,25 @@ namespace hospital
         private MetroFramework.Controls.MetroTextBox metroTextBox13;
         private MetroFramework.Controls.MetroTextBox metroTextBox1;
         private DataGridView dataGridView1;
+        private MetroFramework.Controls.MetroButton Add;
+        private MetroFramework.Controls.MetroButton Delete;
+        private MetroFramework.Controls.MetroButton Update;
+        private MetroFramework.Controls.MetroButton Export;
+        private MetroFramework.Controls.MetroButton Home;
+        private MetroFramework.Controls.MetroButton Zaprosdate;
+        private MetroFramework.Controls.MetroButton Find;
+        public MetroFramework.Controls.MetroButton time;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroLabel metroLabel3;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroLabel metroLabel4;
+        private MetroFramework.Controls.MetroLabel metroLabel5;
+        private MetroFramework.Controls.MetroLabel metroLabel6;
+        private MetroFramework.Controls.MetroLabel metroLabel7;
+        private MetroFramework.Controls.MetroLabel metroLabel8;
+        private MetroFramework.Controls.MetroLabel metroLabel9;
+        private MetroFramework.Controls.MetroLabel metroLabel10;
+        private MetroFramework.Controls.MetroLabel metroLabel11;
         private MetroFramework.Controls.MetroButton metroButton1;
 
         public Client()
@@ -79,7 +98,7 @@ namespace hospital
             string connStr =
             "Database=pac;Data Source=localhost;User Id=root;Password=Monolite_12";
             // SQL запрос
-            string Query = "insert into pac.pers(Фамилия, Имя, Отчество, Пол, `Дата рождения`, КСГ, Серия, Номер, СНИЛС, Адрес, `Место рождения`, `Дата добавления`) values('" + metroTextBox12.Text + "','" + metroTextBox2.Text + "','" + metroTextBox3.Text + "','" + metroTextBox4.Text + "','" + metroTextBox5.Text + "','" + metroTextBox6.Text + "','" + metroTextBox7.Text + "','" + metroTextBox8.Text + "','" + metroTextBox9.Text + "','" + metroTextBox10.Text + "','" + metroTextBox11.Text + "','" + bam + "')";
+            string Query = "insert into pers(Фамилия, Имя, Отчество, Пол, `Дата рождения`, КСГ, Серия, Номер, СНИЛС, Адрес, `Место рождения`, `Дата добавления`) values('" + metroTextBox12.Text + "','" + metroTextBox2.Text + "','" + metroTextBox3.Text + "','" + metroTextBox4.Text + "','" + metroTextBox5.Text + "','" + metroTextBox6.Text + "','" + metroTextBox7.Text + "','" + metroTextBox8.Text + "','" + metroTextBox9.Text + "','" + metroTextBox10.Text + "','" + metroTextBox11.Text + "','" + bam + "')";
             // создаём объект для подключения к БД
             MySqlConnection conn = new MySqlConnection(connStr);
             // устанавливаем соединение с БД
@@ -311,7 +330,7 @@ namespace hospital
             bw.Close();
             fs.Close();
         }
-        private void export_Click(object sender, EventArgs e)
+        private void Export_Click(object sender, EventArgs e)
         {
             //сохранение таблицы в файл
             SaveFileDialog sfd = new SaveFileDialog();
@@ -405,9 +424,9 @@ namespace hospital
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
-            this.pacDataSet = new diplom.pacDataSet();
-            this.pacDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sotBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pacDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pacDataSet = new diplom.pacDataSet();
             this.sotTableAdapter = new diplom.pacDataSetTableAdapters.sotTableAdapter();
             this.sotBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.metroTextBox12 = new MetroFramework.Controls.MetroTextBox();
@@ -424,19 +443,38 @@ namespace hospital
             this.metroTextBox13 = new MetroFramework.Controls.MetroTextBox();
             this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Add = new MetroFramework.Controls.MetroButton();
+            this.Delete = new MetroFramework.Controls.MetroButton();
+            this.Update = new MetroFramework.Controls.MetroButton();
+            this.Export = new MetroFramework.Controls.MetroButton();
+            this.Home = new MetroFramework.Controls.MetroButton();
+            this.Zaprosdate = new MetroFramework.Controls.MetroButton();
+            this.Find = new MetroFramework.Controls.MetroButton();
+            this.time = new MetroFramework.Controls.MetroButton();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pacDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pacDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sotBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pacDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pacDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sotBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(678, 336);
+            this.metroButton1.Location = new System.Drawing.Point(917, 190);
             this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(75, 23);
+            this.metroButton1.Size = new System.Drawing.Size(105, 23);
             this.metroButton1.TabIndex = 0;
             this.metroButton1.Text = "metroButton1";
             this.metroButton1.UseSelectable = true;
@@ -486,20 +524,20 @@ namespace hospital
             this.metroGrid1.Size = new System.Drawing.Size(240, 69);
             this.metroGrid1.TabIndex = 1;
             // 
-            // pacDataSet
+            // sotBindingSource
             // 
-            this.pacDataSet.DataSetName = "pacDataSet";
-            this.pacDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.sotBindingSource.DataMember = "sot";
+            this.sotBindingSource.DataSource = this.pacDataSetBindingSource;
             // 
             // pacDataSetBindingSource
             // 
             this.pacDataSetBindingSource.DataSource = this.pacDataSet;
             this.pacDataSetBindingSource.Position = 0;
             // 
-            // sotBindingSource
+            // pacDataSet
             // 
-            this.sotBindingSource.DataMember = "sot";
-            this.sotBindingSource.DataSource = this.pacDataSetBindingSource;
+            this.pacDataSet.DataSetName = "pacDataSet";
+            this.pacDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // sotTableAdapter
             // 
@@ -524,9 +562,8 @@ namespace hospital
             this.metroTextBox12.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroTextBox12.CustomButton.UseSelectable = true;
             this.metroTextBox12.CustomButton.Visible = false;
-            this.metroTextBox12.Lines = new string[] {
-        "metroTextBox12"};
-            this.metroTextBox12.Location = new System.Drawing.Point(93, 29);
+            this.metroTextBox12.Lines = new string[0];
+            this.metroTextBox12.Location = new System.Drawing.Point(113, 67);
             this.metroTextBox12.MaxLength = 32767;
             this.metroTextBox12.Name = "metroTextBox12";
             this.metroTextBox12.PasswordChar = '\0';
@@ -537,7 +574,6 @@ namespace hospital
             this.metroTextBox12.ShortcutsEnabled = true;
             this.metroTextBox12.Size = new System.Drawing.Size(228, 23);
             this.metroTextBox12.TabIndex = 3;
-            this.metroTextBox12.Text = "metroTextBox12";
             this.metroTextBox12.UseSelectable = true;
             this.metroTextBox12.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox12.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -549,7 +585,7 @@ namespace hospital
             // 
             // 
             this.metroTextBox2.CustomButton.Image = null;
-            this.metroTextBox2.CustomButton.Location = new System.Drawing.Point(179, 1);
+            this.metroTextBox2.CustomButton.Location = new System.Drawing.Point(206, 1);
             this.metroTextBox2.CustomButton.Name = "";
             this.metroTextBox2.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.metroTextBox2.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -557,9 +593,8 @@ namespace hospital
             this.metroTextBox2.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroTextBox2.CustomButton.UseSelectable = true;
             this.metroTextBox2.CustomButton.Visible = false;
-            this.metroTextBox2.Lines = new string[] {
-        "metroTextBox2"};
-            this.metroTextBox2.Location = new System.Drawing.Point(57, 75);
+            this.metroTextBox2.Lines = new string[0];
+            this.metroTextBox2.Location = new System.Drawing.Point(113, 104);
             this.metroTextBox2.MaxLength = 32767;
             this.metroTextBox2.Name = "metroTextBox2";
             this.metroTextBox2.PasswordChar = '\0';
@@ -568,12 +603,12 @@ namespace hospital
             this.metroTextBox2.SelectionLength = 0;
             this.metroTextBox2.SelectionStart = 0;
             this.metroTextBox2.ShortcutsEnabled = true;
-            this.metroTextBox2.Size = new System.Drawing.Size(201, 23);
+            this.metroTextBox2.Size = new System.Drawing.Size(228, 23);
             this.metroTextBox2.TabIndex = 4;
-            this.metroTextBox2.Text = "metroTextBox2";
             this.metroTextBox2.UseSelectable = true;
             this.metroTextBox2.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox2.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.metroTextBox2.Click += new System.EventHandler(this.metroTextBox2_Click);
             // 
             // metroTextBox3
             // 
@@ -581,7 +616,7 @@ namespace hospital
             // 
             // 
             this.metroTextBox3.CustomButton.Image = null;
-            this.metroTextBox3.CustomButton.Location = new System.Drawing.Point(179, 1);
+            this.metroTextBox3.CustomButton.Location = new System.Drawing.Point(206, 1);
             this.metroTextBox3.CustomButton.Name = "";
             this.metroTextBox3.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.metroTextBox3.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -589,9 +624,8 @@ namespace hospital
             this.metroTextBox3.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroTextBox3.CustomButton.UseSelectable = true;
             this.metroTextBox3.CustomButton.Visible = false;
-            this.metroTextBox3.Lines = new string[] {
-        "metroTextBox3"};
-            this.metroTextBox3.Location = new System.Drawing.Point(68, 104);
+            this.metroTextBox3.Lines = new string[0];
+            this.metroTextBox3.Location = new System.Drawing.Point(113, 137);
             this.metroTextBox3.MaxLength = 32767;
             this.metroTextBox3.Name = "metroTextBox3";
             this.metroTextBox3.PasswordChar = '\0';
@@ -600,12 +634,12 @@ namespace hospital
             this.metroTextBox3.SelectionLength = 0;
             this.metroTextBox3.SelectionStart = 0;
             this.metroTextBox3.ShortcutsEnabled = true;
-            this.metroTextBox3.Size = new System.Drawing.Size(201, 23);
+            this.metroTextBox3.Size = new System.Drawing.Size(228, 23);
             this.metroTextBox3.TabIndex = 5;
-            this.metroTextBox3.Text = "metroTextBox3";
             this.metroTextBox3.UseSelectable = true;
             this.metroTextBox3.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox3.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.metroTextBox3.Click += new System.EventHandler(this.metroTextBox3_Click);
             // 
             // metroTextBox4
             // 
@@ -613,7 +647,7 @@ namespace hospital
             // 
             // 
             this.metroTextBox4.CustomButton.Image = null;
-            this.metroTextBox4.CustomButton.Location = new System.Drawing.Point(179, 1);
+            this.metroTextBox4.CustomButton.Location = new System.Drawing.Point(206, 1);
             this.metroTextBox4.CustomButton.Name = "";
             this.metroTextBox4.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.metroTextBox4.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -621,9 +655,8 @@ namespace hospital
             this.metroTextBox4.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroTextBox4.CustomButton.UseSelectable = true;
             this.metroTextBox4.CustomButton.Visible = false;
-            this.metroTextBox4.Lines = new string[] {
-        "metroTextBox4"};
-            this.metroTextBox4.Location = new System.Drawing.Point(68, 133);
+            this.metroTextBox4.Lines = new string[0];
+            this.metroTextBox4.Location = new System.Drawing.Point(113, 180);
             this.metroTextBox4.MaxLength = 32767;
             this.metroTextBox4.Name = "metroTextBox4";
             this.metroTextBox4.PasswordChar = '\0';
@@ -632,9 +665,8 @@ namespace hospital
             this.metroTextBox4.SelectionLength = 0;
             this.metroTextBox4.SelectionStart = 0;
             this.metroTextBox4.ShortcutsEnabled = true;
-            this.metroTextBox4.Size = new System.Drawing.Size(201, 23);
+            this.metroTextBox4.Size = new System.Drawing.Size(228, 23);
             this.metroTextBox4.TabIndex = 6;
-            this.metroTextBox4.Text = "metroTextBox4";
             this.metroTextBox4.UseSelectable = true;
             this.metroTextBox4.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox4.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -645,7 +677,7 @@ namespace hospital
             // 
             // 
             this.metroTextBox5.CustomButton.Image = null;
-            this.metroTextBox5.CustomButton.Location = new System.Drawing.Point(179, 1);
+            this.metroTextBox5.CustomButton.Location = new System.Drawing.Point(206, 1);
             this.metroTextBox5.CustomButton.Name = "";
             this.metroTextBox5.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.metroTextBox5.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -653,21 +685,21 @@ namespace hospital
             this.metroTextBox5.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroTextBox5.CustomButton.UseSelectable = true;
             this.metroTextBox5.CustomButton.Visible = false;
-            this.metroTextBox5.Lines = new string[] {
-        "metroTextBox5"};
-            this.metroTextBox5.Location = new System.Drawing.Point(68, 162);
+            this.metroTextBox5.Lines = new string[0];
+            this.metroTextBox5.Location = new System.Drawing.Point(113, 220);
             this.metroTextBox5.MaxLength = 32767;
             this.metroTextBox5.Name = "metroTextBox5";
             this.metroTextBox5.PasswordChar = '\0';
+            this.metroTextBox5.PromptText = "дд.мм.гггг";
             this.metroTextBox5.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTextBox5.SelectedText = "";
             this.metroTextBox5.SelectionLength = 0;
             this.metroTextBox5.SelectionStart = 0;
             this.metroTextBox5.ShortcutsEnabled = true;
-            this.metroTextBox5.Size = new System.Drawing.Size(201, 23);
+            this.metroTextBox5.Size = new System.Drawing.Size(228, 23);
             this.metroTextBox5.TabIndex = 7;
-            this.metroTextBox5.Text = "metroTextBox5";
             this.metroTextBox5.UseSelectable = true;
+            this.metroTextBox5.WaterMark = "дд.мм.гггг";
             this.metroTextBox5.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox5.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -677,7 +709,7 @@ namespace hospital
             // 
             // 
             this.metroTextBox6.CustomButton.Image = null;
-            this.metroTextBox6.CustomButton.Location = new System.Drawing.Point(179, 1);
+            this.metroTextBox6.CustomButton.Location = new System.Drawing.Point(206, 1);
             this.metroTextBox6.CustomButton.Name = "";
             this.metroTextBox6.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.metroTextBox6.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -685,9 +717,8 @@ namespace hospital
             this.metroTextBox6.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroTextBox6.CustomButton.UseSelectable = true;
             this.metroTextBox6.CustomButton.Visible = false;
-            this.metroTextBox6.Lines = new string[] {
-        "metroTextBox6"};
-            this.metroTextBox6.Location = new System.Drawing.Point(68, 191);
+            this.metroTextBox6.Lines = new string[0];
+            this.metroTextBox6.Location = new System.Drawing.Point(113, 266);
             this.metroTextBox6.MaxLength = 32767;
             this.metroTextBox6.Name = "metroTextBox6";
             this.metroTextBox6.PasswordChar = '\0';
@@ -696,9 +727,8 @@ namespace hospital
             this.metroTextBox6.SelectionLength = 0;
             this.metroTextBox6.SelectionStart = 0;
             this.metroTextBox6.ShortcutsEnabled = true;
-            this.metroTextBox6.Size = new System.Drawing.Size(201, 23);
+            this.metroTextBox6.Size = new System.Drawing.Size(228, 23);
             this.metroTextBox6.TabIndex = 8;
-            this.metroTextBox6.Text = "metroTextBox6";
             this.metroTextBox6.UseSelectable = true;
             this.metroTextBox6.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox6.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -709,7 +739,7 @@ namespace hospital
             // 
             // 
             this.metroTextBox7.CustomButton.Image = null;
-            this.metroTextBox7.CustomButton.Location = new System.Drawing.Point(179, 1);
+            this.metroTextBox7.CustomButton.Location = new System.Drawing.Point(202, 1);
             this.metroTextBox7.CustomButton.Name = "";
             this.metroTextBox7.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.metroTextBox7.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -717,21 +747,21 @@ namespace hospital
             this.metroTextBox7.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroTextBox7.CustomButton.UseSelectable = true;
             this.metroTextBox7.CustomButton.Visible = false;
-            this.metroTextBox7.Lines = new string[] {
-        "metroTextBox7"};
-            this.metroTextBox7.Location = new System.Drawing.Point(68, 220);
+            this.metroTextBox7.Lines = new string[0];
+            this.metroTextBox7.Location = new System.Drawing.Point(625, 67);
             this.metroTextBox7.MaxLength = 32767;
             this.metroTextBox7.Name = "metroTextBox7";
             this.metroTextBox7.PasswordChar = '\0';
+            this.metroTextBox7.PromptText = "0000";
             this.metroTextBox7.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTextBox7.SelectedText = "";
             this.metroTextBox7.SelectionLength = 0;
             this.metroTextBox7.SelectionStart = 0;
             this.metroTextBox7.ShortcutsEnabled = true;
-            this.metroTextBox7.Size = new System.Drawing.Size(201, 23);
+            this.metroTextBox7.Size = new System.Drawing.Size(224, 23);
             this.metroTextBox7.TabIndex = 9;
-            this.metroTextBox7.Text = "metroTextBox7";
             this.metroTextBox7.UseSelectable = true;
+            this.metroTextBox7.WaterMark = "0000";
             this.metroTextBox7.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox7.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -741,7 +771,7 @@ namespace hospital
             // 
             // 
             this.metroTextBox8.CustomButton.Image = null;
-            this.metroTextBox8.CustomButton.Location = new System.Drawing.Point(179, 1);
+            this.metroTextBox8.CustomButton.Location = new System.Drawing.Point(202, 1);
             this.metroTextBox8.CustomButton.Name = "";
             this.metroTextBox8.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.metroTextBox8.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -749,21 +779,21 @@ namespace hospital
             this.metroTextBox8.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroTextBox8.CustomButton.UseSelectable = true;
             this.metroTextBox8.CustomButton.Visible = false;
-            this.metroTextBox8.Lines = new string[] {
-        "metroTextBox8"};
-            this.metroTextBox8.Location = new System.Drawing.Point(68, 249);
+            this.metroTextBox8.Lines = new string[0];
+            this.metroTextBox8.Location = new System.Drawing.Point(625, 100);
             this.metroTextBox8.MaxLength = 32767;
             this.metroTextBox8.Name = "metroTextBox8";
             this.metroTextBox8.PasswordChar = '\0';
+            this.metroTextBox8.PromptText = "000000";
             this.metroTextBox8.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTextBox8.SelectedText = "";
             this.metroTextBox8.SelectionLength = 0;
             this.metroTextBox8.SelectionStart = 0;
             this.metroTextBox8.ShortcutsEnabled = true;
-            this.metroTextBox8.Size = new System.Drawing.Size(201, 23);
+            this.metroTextBox8.Size = new System.Drawing.Size(224, 23);
             this.metroTextBox8.TabIndex = 10;
-            this.metroTextBox8.Text = "metroTextBox8";
             this.metroTextBox8.UseSelectable = true;
+            this.metroTextBox8.WaterMark = "000000";
             this.metroTextBox8.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox8.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -773,7 +803,7 @@ namespace hospital
             // 
             // 
             this.metroTextBox9.CustomButton.Image = null;
-            this.metroTextBox9.CustomButton.Location = new System.Drawing.Point(179, 1);
+            this.metroTextBox9.CustomButton.Location = new System.Drawing.Point(202, 1);
             this.metroTextBox9.CustomButton.Name = "";
             this.metroTextBox9.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.metroTextBox9.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -781,9 +811,8 @@ namespace hospital
             this.metroTextBox9.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroTextBox9.CustomButton.UseSelectable = true;
             this.metroTextBox9.CustomButton.Visible = false;
-            this.metroTextBox9.Lines = new string[] {
-        "metroTextBox9"};
-            this.metroTextBox9.Location = new System.Drawing.Point(68, 278);
+            this.metroTextBox9.Lines = new string[0];
+            this.metroTextBox9.Location = new System.Drawing.Point(625, 137);
             this.metroTextBox9.MaxLength = 32767;
             this.metroTextBox9.Name = "metroTextBox9";
             this.metroTextBox9.PasswordChar = '\0';
@@ -792,9 +821,8 @@ namespace hospital
             this.metroTextBox9.SelectionLength = 0;
             this.metroTextBox9.SelectionStart = 0;
             this.metroTextBox9.ShortcutsEnabled = true;
-            this.metroTextBox9.Size = new System.Drawing.Size(201, 23);
+            this.metroTextBox9.Size = new System.Drawing.Size(224, 23);
             this.metroTextBox9.TabIndex = 11;
-            this.metroTextBox9.Text = "metroTextBox9";
             this.metroTextBox9.UseSelectable = true;
             this.metroTextBox9.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox9.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -805,7 +833,7 @@ namespace hospital
             // 
             // 
             this.metroTextBox10.CustomButton.Image = null;
-            this.metroTextBox10.CustomButton.Location = new System.Drawing.Point(179, 1);
+            this.metroTextBox10.CustomButton.Location = new System.Drawing.Point(202, 1);
             this.metroTextBox10.CustomButton.Name = "";
             this.metroTextBox10.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.metroTextBox10.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -813,9 +841,8 @@ namespace hospital
             this.metroTextBox10.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroTextBox10.CustomButton.UseSelectable = true;
             this.metroTextBox10.CustomButton.Visible = false;
-            this.metroTextBox10.Lines = new string[] {
-        "metroTextBox10"};
-            this.metroTextBox10.Location = new System.Drawing.Point(68, 307);
+            this.metroTextBox10.Lines = new string[0];
+            this.metroTextBox10.Location = new System.Drawing.Point(625, 180);
             this.metroTextBox10.MaxLength = 32767;
             this.metroTextBox10.Name = "metroTextBox10";
             this.metroTextBox10.PasswordChar = '\0';
@@ -824,9 +851,8 @@ namespace hospital
             this.metroTextBox10.SelectionLength = 0;
             this.metroTextBox10.SelectionStart = 0;
             this.metroTextBox10.ShortcutsEnabled = true;
-            this.metroTextBox10.Size = new System.Drawing.Size(201, 23);
+            this.metroTextBox10.Size = new System.Drawing.Size(224, 23);
             this.metroTextBox10.TabIndex = 12;
-            this.metroTextBox10.Text = "metroTextBox10";
             this.metroTextBox10.UseSelectable = true;
             this.metroTextBox10.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox10.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -837,7 +863,7 @@ namespace hospital
             // 
             // 
             this.metroTextBox11.CustomButton.Image = null;
-            this.metroTextBox11.CustomButton.Location = new System.Drawing.Point(179, 1);
+            this.metroTextBox11.CustomButton.Location = new System.Drawing.Point(202, 1);
             this.metroTextBox11.CustomButton.Name = "";
             this.metroTextBox11.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.metroTextBox11.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -845,9 +871,8 @@ namespace hospital
             this.metroTextBox11.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroTextBox11.CustomButton.UseSelectable = true;
             this.metroTextBox11.CustomButton.Visible = false;
-            this.metroTextBox11.Lines = new string[] {
-        "metroTextBox11"};
-            this.metroTextBox11.Location = new System.Drawing.Point(68, 336);
+            this.metroTextBox11.Lines = new string[0];
+            this.metroTextBox11.Location = new System.Drawing.Point(625, 220);
             this.metroTextBox11.MaxLength = 32767;
             this.metroTextBox11.Name = "metroTextBox11";
             this.metroTextBox11.PasswordChar = '\0';
@@ -856,9 +881,8 @@ namespace hospital
             this.metroTextBox11.SelectionLength = 0;
             this.metroTextBox11.SelectionStart = 0;
             this.metroTextBox11.ShortcutsEnabled = true;
-            this.metroTextBox11.Size = new System.Drawing.Size(201, 23);
+            this.metroTextBox11.Size = new System.Drawing.Size(224, 23);
             this.metroTextBox11.TabIndex = 13;
-            this.metroTextBox11.Text = "metroTextBox11";
             this.metroTextBox11.UseSelectable = true;
             this.metroTextBox11.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox11.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -869,7 +893,7 @@ namespace hospital
             // 
             // 
             this.metroTextBox13.CustomButton.Image = null;
-            this.metroTextBox13.CustomButton.Location = new System.Drawing.Point(179, 1);
+            this.metroTextBox13.CustomButton.Location = new System.Drawing.Point(86, 1);
             this.metroTextBox13.CustomButton.Name = "";
             this.metroTextBox13.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.metroTextBox13.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -877,9 +901,8 @@ namespace hospital
             this.metroTextBox13.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroTextBox13.CustomButton.UseSelectable = true;
             this.metroTextBox13.CustomButton.Visible = false;
-            this.metroTextBox13.Lines = new string[] {
-        "metroTextBox13"};
-            this.metroTextBox13.Location = new System.Drawing.Point(300, 249);
+            this.metroTextBox13.Lines = new string[0];
+            this.metroTextBox13.Location = new System.Drawing.Point(606, 16);
             this.metroTextBox13.MaxLength = 32767;
             this.metroTextBox13.Name = "metroTextBox13";
             this.metroTextBox13.PasswordChar = '\0';
@@ -888,9 +911,8 @@ namespace hospital
             this.metroTextBox13.SelectionLength = 0;
             this.metroTextBox13.SelectionStart = 0;
             this.metroTextBox13.ShortcutsEnabled = true;
-            this.metroTextBox13.Size = new System.Drawing.Size(201, 23);
+            this.metroTextBox13.Size = new System.Drawing.Size(108, 23);
             this.metroTextBox13.TabIndex = 14;
-            this.metroTextBox13.Text = "metroTextBox13";
             this.metroTextBox13.UseSelectable = true;
             this.metroTextBox13.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox13.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -909,9 +931,8 @@ namespace hospital
             this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroTextBox1.CustomButton.UseSelectable = true;
             this.metroTextBox1.CustomButton.Visible = false;
-            this.metroTextBox1.Lines = new string[] {
-        "metroTextBox1"};
-            this.metroTextBox1.Location = new System.Drawing.Point(300, 207);
+            this.metroTextBox1.Lines = new string[0];
+            this.metroTextBox1.Location = new System.Drawing.Point(837, 16);
             this.metroTextBox1.MaxLength = 32767;
             this.metroTextBox1.Name = "metroTextBox1";
             this.metroTextBox1.PasswordChar = '\0';
@@ -922,7 +943,6 @@ namespace hospital
             this.metroTextBox1.ShortcutsEnabled = true;
             this.metroTextBox1.Size = new System.Drawing.Size(201, 23);
             this.metroTextBox1.TabIndex = 15;
-            this.metroTextBox1.Text = "metroTextBox1";
             this.metroTextBox1.UseSelectable = true;
             this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -930,14 +950,214 @@ namespace hospital
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(367, 29);
+            this.dataGridView1.Location = new System.Drawing.Point(23, 318);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(401, 156);
+            this.dataGridView1.Size = new System.Drawing.Size(1096, 230);
             this.dataGridView1.TabIndex = 16;
+            // 
+            // Add
+            // 
+            this.Add.Location = new System.Drawing.Point(23, 16);
+            this.Add.Name = "Add";
+            this.Add.Size = new System.Drawing.Size(75, 23);
+            this.Add.TabIndex = 17;
+            this.Add.Text = "Добавить";
+            this.Add.UseSelectable = true;
+            this.Add.Click += new System.EventHandler(this.Add_Click);
+            // 
+            // Delete
+            // 
+            this.Delete.Location = new System.Drawing.Point(104, 16);
+            this.Delete.Name = "Delete";
+            this.Delete.Size = new System.Drawing.Size(75, 23);
+            this.Delete.TabIndex = 18;
+            this.Delete.Text = "Удалить";
+            this.Delete.UseSelectable = true;
+            this.Delete.Click += new System.EventHandler(this.Delete_Click);
+            // 
+            // Update
+            // 
+            this.Update.Location = new System.Drawing.Point(185, 16);
+            this.Update.Name = "Update";
+            this.Update.Size = new System.Drawing.Size(75, 23);
+            this.Update.TabIndex = 19;
+            this.Update.Text = "Изменить";
+            this.Update.UseSelectable = true;
+            this.Update.Click += new System.EventHandler(this.Update_Click);
+            // 
+            // Export
+            // 
+            this.Export.Location = new System.Drawing.Point(266, 16);
+            this.Export.Name = "Export";
+            this.Export.Size = new System.Drawing.Size(75, 23);
+            this.Export.TabIndex = 20;
+            this.Export.Text = "Экспорт";
+            this.Export.UseSelectable = true;
+            this.Export.Click += new System.EventHandler(this.Export_Click);
+            // 
+            // Home
+            // 
+            this.Home.Location = new System.Drawing.Point(347, 16);
+            this.Home.Name = "Home";
+            this.Home.Size = new System.Drawing.Size(75, 23);
+            this.Home.TabIndex = 21;
+            this.Home.Text = "Пациенты";
+            this.Home.UseSelectable = true;
+            this.Home.Click += new System.EventHandler(this.Home_Click);
+            // 
+            // Zaprosdate
+            // 
+            this.Zaprosdate.Location = new System.Drawing.Point(720, 16);
+            this.Zaprosdate.Name = "Zaprosdate";
+            this.Zaprosdate.Size = new System.Drawing.Size(111, 23);
+            this.Zaprosdate.TabIndex = 22;
+            this.Zaprosdate.Text = "Запрос по дате";
+            this.Zaprosdate.UseSelectable = true;
+            this.Zaprosdate.Click += new System.EventHandler(this.Zaprosdate_Click);
+            // 
+            // Find
+            // 
+            this.Find.Location = new System.Drawing.Point(1044, 16);
+            this.Find.Name = "Find";
+            this.Find.Size = new System.Drawing.Size(75, 23);
+            this.Find.TabIndex = 23;
+            this.Find.Text = "Найти";
+            this.Find.UseSelectable = true;
+            this.Find.Click += new System.EventHandler(this.Find_Click);
+            // 
+            // time
+            // 
+            this.time.Location = new System.Drawing.Point(428, 16);
+            this.time.Name = "time";
+            this.time.Size = new System.Drawing.Size(75, 23);
+            this.time.TabIndex = 24;
+            this.time.Text = "Персонал";
+            this.time.UseSelectable = true;
+            this.time.Visible = false;
+            this.time.Click += new System.EventHandler(this.Time_Click);
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.Location = new System.Drawing.Point(35, 67);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(65, 19);
+            this.metroLabel1.TabIndex = 25;
+            this.metroLabel1.Text = "Фамилия";
+            this.metroLabel1.Click += new System.EventHandler(this.metroLabel1_Click);
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.Location = new System.Drawing.Point(35, 104);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(35, 19);
+            this.metroLabel3.TabIndex = 27;
+            this.metroLabel3.Text = "Имя";
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.Location = new System.Drawing.Point(35, 137);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(65, 19);
+            this.metroLabel2.TabIndex = 28;
+            this.metroLabel2.Text = "Отчество";
+            // 
+            // metroLabel4
+            // 
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.Location = new System.Drawing.Point(35, 180);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(33, 19);
+            this.metroLabel4.TabIndex = 29;
+            this.metroLabel4.Text = "Пол";
+            // 
+            // metroLabel5
+            // 
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.Location = new System.Drawing.Point(35, 220);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(37, 19);
+            this.metroLabel5.TabIndex = 30;
+            this.metroLabel5.Text = "Дата";
+            // 
+            // metroLabel6
+            // 
+            this.metroLabel6.AutoSize = true;
+            this.metroLabel6.Location = new System.Drawing.Point(37, 266);
+            this.metroLabel6.Name = "metroLabel6";
+            this.metroLabel6.Size = new System.Drawing.Size(31, 19);
+            this.metroLabel6.TabIndex = 31;
+            this.metroLabel6.Text = "КСГ";
+            // 
+            // metroLabel7
+            // 
+            this.metroLabel7.AutoSize = true;
+            this.metroLabel7.Location = new System.Drawing.Point(412, 67);
+            this.metroLabel7.Name = "metroLabel7";
+            this.metroLabel7.Size = new System.Drawing.Size(48, 19);
+            this.metroLabel7.TabIndex = 32;
+            this.metroLabel7.Text = "Серия";
+            // 
+            // metroLabel8
+            // 
+            this.metroLabel8.AutoSize = true;
+            this.metroLabel8.Location = new System.Drawing.Point(412, 104);
+            this.metroLabel8.Name = "metroLabel8";
+            this.metroLabel8.Size = new System.Drawing.Size(50, 19);
+            this.metroLabel8.TabIndex = 33;
+            this.metroLabel8.Text = "Номер";
+            // 
+            // metroLabel9
+            // 
+            this.metroLabel9.AutoSize = true;
+            this.metroLabel9.Location = new System.Drawing.Point(412, 137);
+            this.metroLabel9.Name = "metroLabel9";
+            this.metroLabel9.Size = new System.Drawing.Size(55, 19);
+            this.metroLabel9.TabIndex = 34;
+            this.metroLabel9.Text = "СНИЛС";
+            // 
+            // metroLabel10
+            // 
+            this.metroLabel10.AutoSize = true;
+            this.metroLabel10.Location = new System.Drawing.Point(412, 180);
+            this.metroLabel10.Name = "metroLabel10";
+            this.metroLabel10.Size = new System.Drawing.Size(128, 19);
+            this.metroLabel10.TabIndex = 35;
+            this.metroLabel10.Text = "Адрес проживания";
+            // 
+            // metroLabel11
+            // 
+            this.metroLabel11.AutoSize = true;
+            this.metroLabel11.Location = new System.Drawing.Point(412, 220);
+            this.metroLabel11.Name = "metroLabel11";
+            this.metroLabel11.Size = new System.Drawing.Size(113, 19);
+            this.metroLabel11.TabIndex = 36;
+            this.metroLabel11.Text = "Место рождения";
             // 
             // Client
             // 
-            this.ClientSize = new System.Drawing.Size(834, 382);
+            this.ClientSize = new System.Drawing.Size(1142, 575);
+            this.Controls.Add(this.metroLabel11);
+            this.Controls.Add(this.metroLabel10);
+            this.Controls.Add(this.metroLabel9);
+            this.Controls.Add(this.metroLabel8);
+            this.Controls.Add(this.metroLabel7);
+            this.Controls.Add(this.metroLabel6);
+            this.Controls.Add(this.metroLabel5);
+            this.Controls.Add(this.metroLabel4);
+            this.Controls.Add(this.metroLabel2);
+            this.Controls.Add(this.metroLabel3);
+            this.Controls.Add(this.metroLabel1);
+            this.Controls.Add(this.time);
+            this.Controls.Add(this.Find);
+            this.Controls.Add(this.Zaprosdate);
+            this.Controls.Add(this.Home);
+            this.Controls.Add(this.Export);
+            this.Controls.Add(this.Update);
+            this.Controls.Add(this.Delete);
+            this.Controls.Add(this.Add);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.metroTextBox1);
             this.Controls.Add(this.metroTextBox13);
@@ -955,14 +1175,16 @@ namespace hospital
             this.Controls.Add(this.metroGrid1);
             this.Controls.Add(this.metroButton1);
             this.Name = "Client";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Client_FormClosed);
             this.Load += new System.EventHandler(this.Client_Load);
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pacDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pacDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sotBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pacDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pacDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sotBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -974,6 +1196,21 @@ namespace hospital
         }
 
         private void metroTextBox12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTextBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTextBox3_Click(object sender, EventArgs e)
         {
 
         }
